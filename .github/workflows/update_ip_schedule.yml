@@ -1,6 +1,6 @@
 # 每10分钟运行一次 scrape_uouin.py，并将更新后的结果提交回仓库。
 
-name: 更新优选IP列表
+name: 定时更新优选IP列表
 
 on:
   schedule:

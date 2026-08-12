@@ -129,7 +129,7 @@ deactivate
 工作流文件位于：
 
 ```text
-.github/workflows/update_ip_list.yml
+.github/workflows/update_ip_schedule.yml
 ```
 
 GitHub Actions 会完成以下操作：
@@ -162,7 +162,7 @@ permissions:
 .
 ├── .github/
 │   └── workflows/
-│       └── update_ip_list.yml
+│       └── update_ip_schedule.yml
 ├── output/
 │   └── uouin.txt
 ├── .gitignore
@@ -175,7 +175,7 @@ permissions:
 | --- | --- |
 | `scrape_uouin.py` | 捕获动态数据、筛选 IP 并生成输出文件 |
 | `requirements.txt` | Python 依赖清单 |
-| `.github/workflows/update_ip_list.yml` | GitHub Actions 自动更新工作流 |
+| `.github/workflows/update_ip_schedule.yml` | GitHub Actions 自动更新工作流 |
 | `output/uouin.txt` | 自动生成的优选 IP 列表，请勿手动编辑 |
 | `.gitignore` | 排除虚拟环境、缓存和本地配置文件 |
 
@@ -207,7 +207,7 @@ permissions:
 确认工作流文件位于：
 
 ```text
-.github/workflows/update_ip_list.yml
+.github/workflows/update_ip_schedule.yml
 ```
 
 只有放在 `.github/workflows/` 目录中的 YAML 文件才会被识别为工作流。
@@ -263,6 +263,7 @@ git pull
 - 将 `actions/checkout` 与 `actions/setup-python` 升级到 v6。
 - 将自动更新周期从每 5 分钟调整为每 10 分钟，并避开整点调度高峰。
 - 将 Cron 改为显式分钟列表，以重新注册并便于排查 GitHub 定时调度。
+- 重建工作流文件，使 GitHub 重新注册异常未触发的定时计划。
 - 完善项目文档、配置说明和常见问题。
 
 ## 注意事项

@@ -1,10 +1,11 @@
-# 每5分钟运行一次 scrape_uouin.py，并将更新后的结果提交回仓库。
+# 每10分钟运行一次 scrape_uouin.py，并将更新后的结果提交回仓库。
 
 name: 更新优选IP列表
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    # 每小时第 6、16、26、36、46、56 分钟运行，避开整点调度高峰。
+    - cron: '6-59/10 * * * *'
   workflow_dispatch:
 
 permissions:
